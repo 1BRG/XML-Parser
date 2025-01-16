@@ -42,8 +42,8 @@ OUTPUT_FILE="output.xml"
 state=0
 eg=0
 fisier=$1
-            loc=()
-            l=()
+loc=()
+l=()
 ct=0
 echo "" > "$OUTPUT_FILE"
 while read -r line; do
@@ -152,7 +152,9 @@ while read -r line; do
                 tabs+="   "
             done
             if [[ ${#loc[@]} > 0 ]]; then
-            echo "${tabs}${loc[@]}" >> "$OUTPUT_FILE"
+            tabss=$tabs
+            tabss+="   "
+            echo "${tabss}${loc[@]}" >> "$OUTPUT_FILE"
             fi
             loc=()
             afisare="</"
